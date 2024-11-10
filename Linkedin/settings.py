@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-tk!o(su1eppvx+=vj9gywb511%3p&p%0bb-k9yes!ig)saegcp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.datanebulae.ca', 'datanebulae.ca']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -118,7 +118,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/jobfield/static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -130,11 +130,11 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 # Media files (Uploaded files)
-MEDIA_URL = '/jobfield/media/'
-MEDIA_ROOT = '/home/fifps320/public_html/Linkedin/media'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Add static root
-STATIC_ROOT = '/home/fifps320/public_html/Linkedin/static'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Security settings
 # SECURE_SSL_REDIRECT = True
