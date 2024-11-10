@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    {% if user.is_authenticated %}
+        <h1>Welcome to LinkedIn Clone</h1>
+        <p>Hello, {{ user.username }}!</p>
+        {% if jobs %}
+            <div class="row mt-4">
+                <div class="col-md-8">
+                    <h2>Latest Job Postings</h2>
+                    <div class="list-group">
+                        {% for job in jobs %}
+                            <a href="{{ job.job_url }}" class="list-group-item list-group-item-action" target="_blank">
+                                {{ job.company_name }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% else %}
+        <div class="text-center mt-5">
+            <h1>Welcome to LinkedIn Clone</h1>
+            <p class="lead">Connect, share, and find your next opportunity</p>
+            <div class="mt-4">
+                <a href="{% url 'login' %}" class="btn btn-primary me-2">Login</a>
+                <a href="{% url 'register' %}" class="btn btn-outline-primary">Register</a>
+            </div>
+        </div>
+    {% endif %}
+</div>
+{% endblock %} 

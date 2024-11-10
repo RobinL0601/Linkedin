@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Job Postings</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class="list-group">
+                        {% for job in jobs %}
+                            <a href="{{ job.job_url }}" class="list-group-item list-group-item-action" target="_blank">
+                                {{ job.company_name }}
+                            </a>
+                        {% empty %}
+                            <p class="text-muted">No job postings available.</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

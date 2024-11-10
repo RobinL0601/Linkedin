@@ -1,0 +1,1 @@
+web: gunicorn Linkedin.wsgi:application 

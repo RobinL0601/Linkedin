@@ -1,0 +1,23 @@
+<IfModule mod_wsgi.c>
+    WSGIDaemonProcess jobfield python-path=/home/username/public_html/jobfield/venv/lib/python3.9/site-packages
+    WSGIProcessGroup jobfield
+    WSGIScriptAlias /jobfield /home/username/public_html/jobfield/Linkedin/wsgi.py
+</IfModule>
+
+<Directory /home/username/public_html/jobfield/Linkedin>
+    <Files wsgi.py>
+        Require all granted
+    </Files>
+</Directory>
+
+# Serve static files
+Alias /jobfield/static/ /home/username/public_html/jobfield/staticfiles/
+<Directory /home/username/public_html/jobfield/staticfiles>
+    Require all granted
+</Directory>
+
+# Serve media files
+Alias /jobfield/media/ /home/username/public_html/jobfield/media/
+<Directory /home/username/public_html/jobfield/media>
+    Require all granted
+</Directory> 
